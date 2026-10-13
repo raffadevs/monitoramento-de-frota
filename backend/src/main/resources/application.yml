@@ -12,9 +12,10 @@ spring:
     hibernate:
       ddl-auto: validate
     open-in-view: false
-    properties:
-      hibernate:
-        dialect: org.hibernate.spatial.dialect.postgis.PostgisPGDialect
+    # Hibernate 6 detecta o dialeto automaticamente a partir da URL JDBC; o
+    # suporte a tipos espaciais é ativado só por ter hibernate-spatial no
+    # classpath, sem precisar apontar para um dialeto "Postgis" separado
+    # (esse mecanismo existia no Hibernate 5 e foi removido no 6).
   flyway:
     locations: classpath:db/migration
     baseline-on-migrate: true
