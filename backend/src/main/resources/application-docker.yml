@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/${POSTGRES_DB:frota}
+    username: ${POSTGRES_USER:frota}
+    password: ${POSTGRES_PASSWORD:change-me}
+
+app:
+  mqtt:
+    broker-url: tcp://mosquitto:1883
+  simulador:
+    habilitado: ${SIMULADOR_HABILITADO:true}
